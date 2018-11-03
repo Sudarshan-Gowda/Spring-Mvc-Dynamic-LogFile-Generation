@@ -1,5 +1,5 @@
 package com.star.sud;
-/*@Author Sudarshan*/
+/*@Author Sudarshan Gowda*/
 public class SectionKeys {
 
 	public static final String LOG_IN = "j_spring_security_check";
