@@ -1,4 +1,5 @@
 package com.star.sud.web;
+
 /*@Author Sudarshan*/
 import java.io.IOException;
 import java.io.InputStream;
@@ -50,6 +51,8 @@ public class StarLoginController {
 
 		reqParams.remove(STAR_MESSAGE);
 		model.addAttribute(SectionKeys.REQ_PARAMS, StarUtil.getParamsAsString(reqParams));
+		model.addAttribute("userName", "admin");
+		model.addAttribute("password", "admin");
 		return "login/login-page";
 	}
 
@@ -64,6 +67,8 @@ public class StarLoginController {
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
 	protected String welcome(Model model, HttpSession session, HttpServletRequest request,
 			@RequestParam Map<String, String> requestParam) {
+
+		logger.info("welcome()");
 
 		int sessionTomeout = 50000;
 		String sesTimeout = 60000 + "";
@@ -87,6 +92,8 @@ public class StarLoginController {
 		if (request.getRemoteUser() != null) {
 
 			model.addAttribute("userName", user.getUserName());
+			logger.info("Successfully Logged in and now redirecting to welcome");
+			model.addAttribute("location", loc + user.getUserName() + ".log");
 			return "welcome/welcome";
 		} else {
 			return "redirect:/";

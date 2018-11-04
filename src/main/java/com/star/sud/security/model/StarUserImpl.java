@@ -1,4 +1,5 @@
 package com.star.sud.security.model;
+
 /*@Author Sudarshan*/
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 
 @Entity
 @Table(name = "STAR_SM_USER")
@@ -66,6 +68,12 @@ public class StarUserImpl implements StarUser {
 
 	public void setIsEnabled(Boolean isEnabled) {
 		this.isEnabled = isEnabled;
+	}
+
+	public static void main(String[] args) {
+		Md5PasswordEncoder encoder = new Md5PasswordEncoder();
+		System.out.println(encoder.encodePassword("admin", null));
+
 	}
 
 }

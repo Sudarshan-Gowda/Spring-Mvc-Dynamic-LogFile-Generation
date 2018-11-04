@@ -23,7 +23,7 @@
 
 		<property name="sessionTimeOut" value="600000"></property>
 		<property name="commonPath"
-			value="E:/sudarshan-projects/2017/spring-thymeleaf/dynamic-log-tracking-client-ip-spring-security/"></property>
+			value="C:\sudarshan\research\projects\github-projects\accounts\sudarshan-gowda\server-copy\Spring-Mvc-Dynamic-LogFile-Generation\"></property>
 		<property name="logfileLoc" value="logs/"></property>
 
 	</bean>

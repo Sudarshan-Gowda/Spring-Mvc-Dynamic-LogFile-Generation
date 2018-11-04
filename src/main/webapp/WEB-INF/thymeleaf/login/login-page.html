@@ -1,6 +1,7 @@
 <html>
 <head>
-<title>Spring Security</title>
+<title>Dynamic Log File Generation</title>
+<link rel="icon" th:href="@{/resources/images/sudarshan-logo.png}" />
 </head>
 <body>
 	<!--  added for loading symbol display in screen  -->
@@ -66,17 +67,29 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="container-fluid">
 			<div id="dbCarousel" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
 						<img th:src="@{/resources/images/blank.png}" width="95%" />
 					</div>
-				</div>
-			</div>
-		</div>
 
+				</div>
+
+			</div>
+
+		</div>
+		<div>
+			<marquee>
+				<span>Please enter username as <b><span
+						th:text="${userName}"></span></b> and password as <b><span
+						th:text="${password}"></span></b> to access or login the application
+				</span>
+			</marquee>
+		</div>
 	</div>
+
 
 	<div class="col-lg-12 col-sm-12 col-xs-12 copyrights">
 		<div th:substituteBy="login/login-footer" th:remove="tag"></div>

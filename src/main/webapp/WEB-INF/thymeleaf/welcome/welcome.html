@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Spring Security</title>
+<title>Dynamic Log File Generation</title>
+<link rel="icon" th:href="@{/resources/images/sudarshan-logo.png}" />
 </head>
 <body>
 	<div id="fullpage">
@@ -13,7 +14,14 @@
 		<div id="star-wrapper">
 			<div>
 				<span>Dear </span> <span id="star-userId" th:text="${userName}"></span>:
-				your Successfully Logged In......
+				Your Successfully Logged In!!
+			</div>
+			<div
+				style="font-size: small; padding: 70px; margin-top: 25px; margin-left: -95px;">
+				<span>Dynamic Log file is generated with current date under
+					the location</span> <b><span th:text="${location}"></span></b><span>
+					and the path is configured in <b>business-config.xml</b> file
+				</span>
 			</div>
 		</div>
 	</div>
